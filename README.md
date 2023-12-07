@@ -1,12 +1,10 @@
 # Recession Buddy
 
+The "Recession Buddy" project is designed to be a comprehensive platform to assist individuals during periods of economic recession. This project encompasses various features and functionalities across different sectors such as technology, finance, healthcare, and more.
+
 <img width="1280" alt="Screenshot 2023-12-06 at 18 34 58" src="https://github.com/chiragpandey15/HackSC2023/assets/23038373/3e671f3d-8b5d-48c5-8529-d4e5f5b2fd4a"><img width="1280" alt="Screenshot 2023-12-06 at 18 35 21" src="https://github.com/chiragpandey15/HackSC2023/assets/23038373/c3ec7980-1645-417f-bdfc-9f8d2c98f397"><img width="1280" alt="Screenshot 2023-12-06 at 18 35 40" src="https://github.com/chiragpandey15/HackSC2023/assets/23038373/1267e3ce-28f9-41e7-9a19-4df4da53a198">
 <img width="1280" alt="Screenshot 2023-12-06 at 18 35 56" src="https://github.com/chiragpandey15/HackSC2023/assets/23038373/6ccebc9b-125c-4036-9718-425d25c402ae">
 
-
-
-
-The "Recession Buddy" project is designed to be a comprehensive platform to assist individuals during periods of economic recession. This project encompasses various features and functionalities across different sectors such as technology, finance, healthcare, and more.
 
 ## Key Components:
 
