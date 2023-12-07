@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tracker - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="dashboard.html">Recession Buddy</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+                    aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+                        class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="dashboard.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            Dashboard
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Analytics</div>
+                        <a class="nav-link active" href="proj_tracker.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                            Tracker
+                        </a>
+
+                        <a class="nav-link" href="proj_skills.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-arrow-trend-up"></i></div>
+                            Skills
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Community</div>
+                        <a class="nav-link" href="proj_blog.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-rss"></i></div>
+                            Blog
+                        </a>
+                        <a class="nav-link" href="proj_recruiters.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-people-group"></i></div>
+                            Recruiters
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Employee
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Tracker</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Tracker</li>
+                    </ol>
+
+
+                    <!------------------------------->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Employees Laid off Stats
+                        </div>
+                        <div class="card-body">
+                            <figure>
+                                <div class="d-flex" style="border-left: 1px solid gray; border-bottom: 1px solid gray;">
+                                    <div class="d-none d-md-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>better-com</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>grofers</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>arm-semi</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>guahao-we-doctor</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 7.04px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">8,262</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-none d-md-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>better-com</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>unacademy</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 11.5833px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">5,825</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-none d-md-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>getir</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>carvana</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>bilibili</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>lidolearning</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>reef-technology</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>klarna</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>mfine</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>cars24</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>vedantu</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 26.2567px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">22,707</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-none d-md-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>tesla</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>byjus</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>coinbase</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>ibm</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>onetrust</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>ziroom</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>cazoo</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>bybit</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>
+                                                        <div class="d-flex align-items-center"
+                                                            style="height: 2px; width: 80px; overflow: hidden; background-color: white;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 58.53px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">29,359</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-none d-md-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>microsoft</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>gopuff</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>airlift</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>ola-cabs</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>shopify</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>invitae</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>rivian</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>pudu-robotics</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>arrival</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 39.2367px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">21,731</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-none d-md-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>snap</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>xiaomi</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>wayfair</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>peloton</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>gohealth</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>crypto-com</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>pollen-travel</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>robinhood</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>
+                                                        <div class="d-flex align-items-center"
+                                                            style="height: 2px; width: 80px; overflow: hidden; background-color: white;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 46.54px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">21,425</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>twilio</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>cazoo</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>docusign</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 28.2367px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">10,741</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>seagate</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>byjus</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>argo-ai</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>walmart.com</div>
+                                                </div>
+
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>microsoft</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>crypto-com</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>hellofresh</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 42.6867px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">24,164</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>facebook</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>twitter</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>twitter</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>carvana</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>goto</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>doordash</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>kraken</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>gen-digital</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>stripe</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>udaan</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>salesforce</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>redfin</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>lyft</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>
+                                                        <div class="d-flex align-items-center"
+                                                            style="height: 2px; width: 80px; overflow: hidden; background-color: white;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 66.6033px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">50,593</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>toutiao-bytedance</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>xiaomi</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>micron</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>health-iq</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>global foundries</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>
+                                                        <div class="d-flex align-items-center"
+                                                            style="height: 2.61px; width: 80px; overflow: hidden; background-color: white;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>playtika</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>oyo-rooms</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 45.9167px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">40,368</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div><a href="proj_company.html"
+                                                            style="text-decoration: none; color: black;">amazon</a>
+                                                    </div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>google</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>microsoft</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>salesforce</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+
+                                                    <div class=""
+                                                        style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                        <div>Philips</div>
+                                                    </div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>ibm</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>sap</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>paypal</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>opentext</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>cloud-software-group</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>wayfair</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>olx-group</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>lam-research</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>vacasa</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>
+                                                        <div class="d-flex align-items-center"
+                                                            style="height: 3.66667px; width: 80px; overflow: hidden; background-color: white;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>netapp</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>coinbase</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>arrival</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>crypto-com</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>
+                                                        <div class="d-flex align-items-center"
+                                                            style="height: 2.56667px; width: 80px; overflow: hidden; background-color: white;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>amdocs</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>flexport</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>spotify</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 93.7767px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">107,203</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center text-center align-items-end"
+                                        style="flex: 1 1 0%;">
+                                        <div class="d-flex flex-column" style="width: 80px;">
+                                            <div class="d-flex flex-column">
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>byjus</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div>rivian</div>
+                                                </div>
+                                                <div class=""
+                                                    style="outline: black solid 1px; width: 80px; font-size: small;">
+                                                    <div class="d-flex align-items-center"
+                                                        style="height: 13.4633px; width: 80px; overflow: hidden; background: repeating-linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 1px, rgb(0, 0, 0) 1px, rgb(0, 0, 0) 2px); box-shadow: white 0px -7px 7px -7px inset;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first mb-3 small font-weight-bold d-flex justify-content-center"
+                                                style="width: 80px; font-size: 120%; font-weight: bold;">5,879</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="d-none d-md-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>MAR</div>
+                                    </div>
+                                    <div class="d-none d-md-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>APR</div>
+                                    </div>
+                                    <div class="d-none d-md-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>MAY</div>
+                                    </div>
+                                    <div class="d-none d-md-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>JUN</div>
+                                    </div>
+                                    <div class="d-none d-md-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>JUL</div>
+                                    </div>
+                                    <div class="d-none d-md-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>AUG</div>
+                                    </div>
+                                    <div class="d-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>SEP</div>
+                                    </div>
+                                    <div class="d-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>OCT</div>
+                                    </div>
+                                    <div class="d-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>NOV</div>
+                                    </div>
+                                    <div class="d-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>DEC</div>
+                                    </div>
+                                    <div class="d-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>JAN</div>
+                                        <div>2023</div>
+                                    </div>
+                                    <div class="d-block text-center small pt-2 font-weight-bold"
+                                        style="flex: 1 1 0%; line-height: 1.3;">
+                                        <div>FEB</div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+
+
+                    <!--------------------------------->
+
+
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Jobs Tracker
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>Company</th>
+                                        <th>Position</th>
+                                        <th>Status</th>
+                                        <th>Open-Jobs</th>
+
+                                    </tr>
+                                </thead>
+                                <!-- <tfoot>
+                                    <tr>
+                                        <th>Company</th>
+                                        <th>Position</th>
+                                        <th>Status</th>
+                                        <th>Open-Jobs</th>
+                                    </tr>
+                                </tfoot> -->
+                                <tbody>
+                                    <tr>
+                                        <td>Amazon</td>
+                                        <td>System Architect</td>
+
+                                        <td><label
+                                                style="color: white; background-color: brown; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Freeze</la>
+                                        </td>
+                                        <td>
+                                            <a href="https://www.trueup.io/co/amazon/jobs"
+                                                style="text-decoration: none; color: black;">
+                                                <div style="height:100%;width:100%">
+                                                    61
+                                                </div>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Facebook</td>
+                                        <td>Software Engineer</td>
+                                        <td><label
+                                                style="color: white; background-color: orange; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Some hiring</la>
+                                        </td>
+                                        <td>45</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adobe</td>
+                                        <td>Graphic Designer</td>
+                                        <td><label
+                                                style="color: white; background-color: green; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">hiring</la>
+                                        </td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>One 7</td>
+                                        <td>Salesforce Developer</td>
+                                        <td><label
+                                                style="color: white; background-color: green; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Hiring</la>
+                                        </td>
+                                        <td>19</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Apple</td>
+                                        <td>Chip Designer</td>
+                                        <td><label
+                                                style="color: white; background-color: orange; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Some hiring</la>
+                                        </td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2K</td>
+                                        <td>Game Developer Intern</td>
+                                        <td><label
+                                                style="color: white; background-color: green; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Hiring</la>
+                                        </td>
+                                        <td>13</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Elastic</td>
+                                        <td>Cloud Engineer</td>
+                                        <td><label
+                                                style="color: white; background-color: green; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Hiring</la>
+                                        </td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Netflix</td>
+                                        <td>Software Engineer</td>
+                                        <td><label
+                                                style="color: white; background-color: green; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Hiring</la>
+                                        </td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Salesmate</td>
+                                        <td>Software Developer</td>
+                                        <td><label
+                                                style="color: white; background-color: green; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Hiring</la>
+                                        </td>
+                                        <td>4</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>TikTok</td>
+                                        <td>Software Developer</td>
+                                        <td><label
+                                                style="color: white; background-color: green; border-radius: 5px; padding: 5px;"
+                                                class="label label-primary">Hiring</la>
+                                        </td>
+                                        <td>42</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Recession Buddy - HackSC2023</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="assets/demo/chart-pie-demo.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+
+</body>
+
+</html>
